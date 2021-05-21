@@ -71,11 +71,13 @@ class CarouselImage extends StatefulWidget{ //많은 기능들을 담고 있기 
                 ),
                 Container(
                   padding: EdgeInsets.only(right: 10),
-                  child: FlatButton(
-                    color: Colors.white,
+                  child: TextButton(
+                    style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all<Color>(Colors.white)
+                      ),
                     onPressed: () {},
                     child: Row(
-                      children: <Widget> [
+                      children: <Widget>[
                         Icon(
                           Icons.play_arrow,
                           color: Colors.black,

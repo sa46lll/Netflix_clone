@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:netflix_clone_test/model/model_movie.dart';
+import 'package:netflix_clone_test/widget/box_slider.dart';
 import 'package:netflix_clone_test/widget/carousel_slider.dart';
+import 'package:netflix_clone_test/widget/circle_slider.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -33,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
       'poster': 'test_movie_1.png',
       'like': false
     }),
-    
+
   ];
   @override
 void initState() {
@@ -43,12 +45,18 @@ void initState() {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(children: <Widget>[
-      Stack(children: <Widget>[ //스택으로 CarouselImage 맨 아래 위치
-        CarouselImage(movies: movies),
-        TopBar(),
-      ],)
-    ],);  
+    return ListView(
+      children: <Widget>[
+        Stack(
+          children: <Widget>[ //스택으로 CarouselImage 맨 아래 위치
+            CarouselImage(movies: movies),
+            TopBar(),
+          ],
+        ),
+        CircleSlider(movies: movies),
+        BoxSlider(movies: movies),
+      ],
+    );  
   }
 }
 
